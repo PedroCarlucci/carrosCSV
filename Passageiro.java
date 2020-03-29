@@ -4,6 +4,13 @@ public class Passageiro{
     private FormaPagamento formaPagamento;
     private String nroCartao;
 
+    public Passageiro(String CPF, String nome, FormaPagamento formaPagamento, String nroCartao){
+        this.CPF = CPF;
+        this.nome = nome;
+        this.formaPagamento = formaPagamento;
+        this.nroCartao = nroCartao;
+    }
+
     public String getCPF(){
         return CPF;
     }
