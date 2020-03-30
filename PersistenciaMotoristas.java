@@ -20,7 +20,7 @@ public class PersistenciaMotoristas
             
             for (CSVRecord csvRecord : csvParser)
             {
-                listamotorista.add(new Motorista(csvRecord.get(0),csvRecord.get(1),csvRecord.get(2),csvRecord.get(3)));
+                listamotorista.add(new Motorista(csvRecord.get(0),csvRecord.get(1),csvRecord.get(2),FormaPagamento.valueOf(csvRecord.get(3))));
 
 
             }
