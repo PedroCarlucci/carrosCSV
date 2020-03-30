@@ -6,7 +6,6 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import Motorista; 
 public class PersistenciaMotoristas
 {
     private static final String SAMPLE_CSV_FILE_PATH = "motorista.dat";
