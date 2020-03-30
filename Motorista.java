@@ -4,7 +4,7 @@ public class Motorista{
     private Veiculo veiculo;
     private FormaPagamento[] formaPagamento;
 
-    public Motorista(String nome, String cpf, Veiculo veiculo, FormaPagamento[] formaPgto){
+    public Motorista(String cpf,String nome, Veiculo veiculo, FormaPagamento[] formaPgto){
         this.nome = nome;
         this.cpf = cpf;
         this.veiculo = veiculo;
