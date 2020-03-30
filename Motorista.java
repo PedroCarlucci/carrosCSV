@@ -2,9 +2,9 @@ public class Motorista{
     private String nome;
     private String cpf;
     private Veiculo veiculo;
-    private FormaPagamento[] formaPagamento;
+    private FormaPagamento formaPagamento;
 
-    public Motorista(String cpf,String nome, Veiculo veiculo, FormaPagamento[] formaPgto){
+    public Motorista(String cpf,String nome, Veiculo veiculo, FormaPagamento formaPgto){
         this.nome = nome;
         this.cpf = cpf;
         this.veiculo = veiculo;
@@ -23,7 +23,7 @@ public class Motorista{
         return veiculo;
     }
 
-    public FormaPagamento[] getFormaPgto(){
+    public FormaPagamento getFormaPgto(){
         return formaPagamento;
     }
 
