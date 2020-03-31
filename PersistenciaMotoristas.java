@@ -9,12 +9,20 @@ import java.util.LinkedList;
 import java.util.List;
 public class PersistenciaMotoristas
 {
-    private static final String SAMPLE_CSV_FILE_PATH = "motorista.dat";
-    
+    private static String FILE_PATH = "motorista.dat";
+    private static List<Veiculo> listaVeiculos;
+
+    public PersistenciaMotoristas(String path, List<Veiculo> listaVeiculos){
+        this.FILE_PATH = path;
+        this.listaVeiculos = listaVeiculos;
+
+    }
+
+
     public List<Motorista> carregaMotoristas() throws IOException{
 
         LinkedList<Motorista> listaMotorista = new LinkedList<Motorista>();
-        Reader reader = Files.newBufferedReader(Paths.get(SAMPLE_CSV_FILE_PATH));
+        Reader reader = Files.newBufferedReader(Paths.get(FILE_PATH));
         CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT);    
         for (CSVRecord csvRecord : csvParser){
 
