@@ -9,7 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 public class PersistenciaVeiculos{
     
-    private static String FILE_PATH;
+    private String FILE_PATH;
 
     public PersistenciaVeiculos(String path){
         FILE_PATH = path;
@@ -31,5 +31,9 @@ public class PersistenciaVeiculos{
             }
         }
         return listaVeiculo;
+    }
+
+    public Boolean persistenciaVeiculos() throws IOException {
+        return true;
     }
 }
