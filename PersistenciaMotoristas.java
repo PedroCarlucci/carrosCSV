@@ -9,8 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 public class PersistenciaMotoristas
 {
-    private static String FILE_PATH = "motorista.dat";
-    private static List<Veiculo> listaVeiculos;
+    private String FILE_PATH = "motorista.dat";
+    private List<Veiculo> listaVeiculos;
 
     public PersistenciaMotoristas(String path, List<Veiculo> listaVeiculos){
         this.FILE_PATH = path;
