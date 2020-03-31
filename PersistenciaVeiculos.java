@@ -8,13 +8,18 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 public class PersistenciaVeiculos{
-    private static final String SAMPLE_CSV_FILE_PATH = "veiculos.dat";
+    private static String FILE_PATH;
+
+
+    public PersistenciaVeiculos(String path){
+        FILE_PATH = path;
+    }
     
     public List<Veiculo> carregaVeiculos() throws IOException {
 
         List<Veiculo> listaVeiculo = new LinkedList<Veiculo>();
 
-        Reader reader = Files.newBufferedReader(Paths.get(SAMPLE_CSV_FILE_PATH));
+        Reader reader = Files.newBufferedReader(Paths.get(FILE_PATH));
         CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT);
 
         for (CSVRecord csvRecord : csvParser){
