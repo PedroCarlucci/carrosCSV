@@ -8,8 +8,8 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 public class PersistenciaVeiculos{
+    
     private static String FILE_PATH;
-
 
     public PersistenciaVeiculos(String path){
         FILE_PATH = path;
@@ -18,17 +18,18 @@ public class PersistenciaVeiculos{
     public List<Veiculo> carregaVeiculos() throws IOException {
 
         List<Veiculo> listaVeiculo = new LinkedList<Veiculo>();
-
-        Reader reader = Files.newBufferedReader(Paths.get(FILE_PATH));
-        CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT);
-
-        for (CSVRecord csvRecord : csvParser){
-            String placa = csvRecord.get(0);
-            String marca = csvRecord.get(1);
-            String cor = csvRecord.get(2);
-            String categoria = csvRecord.get(3);
+        try(
+            Reader reader = Files.newBufferedReader(Paths.get(FILE_PATH));
+            CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT);
+        ){     
+            for (CSVRecord csvRecord : csvParser){
+                String placa = csvRecord.get(0);
+                String marca = csvRecord.get(1);
+                String cor = csvRecord.get(2);
+                Categoria categoria = Categoria.valueOf(csvRecord.get(3));
+                listaVeiculo.add(new Veiculo(placa,marca,cor,categoria));
+            }
         }
         return listaVeiculo;
-     }
-
+    }
 }
